@@ -14,7 +14,7 @@ import UIKit
 
 protocol ChattingPagePresentationLogic
 {
-  func presentSomething(response: ChattingPage.Something.Response)
+  func presentSomething(response: ChattingPage.Response)
 }
 
 class ChattingPagePresenter: ChattingPagePresentationLogic
@@ -23,9 +23,9 @@ class ChattingPagePresenter: ChattingPagePresentationLogic
   
   // MARK: Do something
   
-  func presentSomething(response: ChattingPage.Something.Response)
+  func presentSomething(response: ChattingPage.Response)
   {
-    let viewModel = ChattingPage.Something.ViewModel()
+    let viewModel = ChattingPage.ViewModel()
     viewController?.displaySomething(viewModel: viewModel)
   }
 }

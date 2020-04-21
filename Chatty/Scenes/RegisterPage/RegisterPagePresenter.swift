@@ -14,18 +14,25 @@ import UIKit
 
 protocol RegisterPagePresentationLogic
 {
-  func presentSomething(response: RegisterPage.Response)
+    func presentSomething(response: RegisterPage.Response)
 }
 
 class RegisterPagePresenter: RegisterPagePresentationLogic
 {
-  weak var viewController: RegisterPageDisplayLogic?
-  
-  // MARK: Do something
-  
-  func presentSomething(response: RegisterPage.Response)
-  {
-    let viewModel = RegisterPage.ViewModel()
-    viewController?.displaySomething(viewModel: viewModel)
-  }
+    weak var viewController: RegisterPageDisplayLogic?
+    
+    // MARK: Do something
+    
+    func presentSomething(response: RegisterPage.Response)
+    {
+        let viewModel = RegisterPage.ViewModel()
+        viewController?.displaySomething(viewModel: viewModel)
+
+//        if(!response.isEmailVerified!) {
+//            let title = "Activation"
+//            let message = "The activation email was send to your email. Please activate your account."
+//            let buttonTitle = "OK"
+//            AlertManager.showConfirmAlert(title: title, message: message, buttonTitle: buttonTitle, controller: viewController as! UIViewController)
+//        }
+    }
 }

@@ -19,8 +19,15 @@ class LoginPageWorker
     var email: String?
     var password: String?
     
-    func fetchLoginInfo()
-    {
- 
+    func fetchLoginInfo(requestModel: LoginPage.Request,completion: @escaping (AuthDataResult?) -> Void) {
+        Auth.auth().signIn(withEmail: requestModel.email ?? "", password: requestModel.password ?? "") { (data, error) in
+            if let _error = error {
+                //something bad happening
+                print(_error.localizedDescription )
+            } else {
+                completion(data)
+            }
+        }
     }
 }
+

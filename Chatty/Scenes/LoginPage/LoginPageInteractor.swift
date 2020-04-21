@@ -14,28 +14,42 @@ import UIKit
 
 protocol LoginPageBusinessLogic
 {
-  func doSomething(request: LoginPage.Something.Request)
+    func loginInfo(request: LoginPage.Request)
 }
 
 protocol LoginPageDataStore
 {
-  //var name: String { get set }
+    //var name: String { get set }
+    var displayName: String? { get set }
+    var email: String? { get set }
+    var uid: String? { get set }
 }
 
 class LoginPageInteractor: LoginPageBusinessLogic, LoginPageDataStore
 {
-  var presenter: LoginPagePresentationLogic?
-  var worker: LoginPageWorker?
-  //var name: String = ""
-  
-  // MARK: Do something
-  
-  func doSomething(request: LoginPage.Something.Request)
-  {
-    worker = LoginPageWorker()
-    worker?.fetchLoginInfo()
+    var displayName: String?
+    var email: String?
+    var uid: String?
     
-    let response = LoginPage.Something.Response()
-    presenter?.presentSomething(response: response)
-  }
+    var presenter: LoginPagePresentationLogic?
+    var worker: LoginPageWorker?
+    
+    // MARK: Do something
+    
+    func loginInfo(request: LoginPage.Request)
+    {
+        var response = LoginPage.Response()
+        worker = LoginPageWorker()
+        worker?.fetchLoginInfo(requestModel: request, completion: { (authResponse) in
+            response.displayName = authResponse?.user.displayName
+            response.email = authResponse?.user.email
+            response.userID = authResponse?.user.uid
+            
+            // Filling data store
+            self.displayName = response.displayName
+            self.email = response.email
+            self.uid = response.userID
+        })
+        presenter?.presentSomething(response: response)
+    }
 }

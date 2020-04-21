@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		222317282449B167007C23EB /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222317272449B167007C23EB /* AlertManager.swift */; };
 		228BF04724424FB60027D325 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228BF04624424FB60027D325 /* AppDelegate.swift */; };
 		228BF04924424FB60027D325 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228BF04824424FB60027D325 /* SceneDelegate.swift */; };
 		228BF04E24424FB60027D325 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 228BF04C24424FB60027D325 /* Main.storyboard */; };
@@ -14,12 +15,23 @@
 		228BF05324424FBB0027D325 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 228BF05124424FBB0027D325 /* LaunchScreen.storyboard */; };
 		228BF05E24424FBB0027D325 /* ChattyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228BF05D24424FBB0027D325 /* ChattyTests.swift */; };
 		228BF06924424FBB0027D325 /* ChattyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228BF06824424FBB0027D325 /* ChattyUITests.swift */; };
+		229AB747244D9A3800EB166B /* NavigationControllerUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229AB746244D9A3800EB166B /* NavigationControllerUtil.swift */; };
+		229AB749244DB59300EB166B /* MessagesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229AB748244DB59300EB166B /* MessagesTableViewCell.swift */; };
 		22C8DDB22442635D00EDCCA0 /* RegisterPagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C8DDAC2442635D00EDCCA0 /* RegisterPagePresenter.swift */; };
 		22C8DDB32442635D00EDCCA0 /* RegisterPageWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C8DDAD2442635D00EDCCA0 /* RegisterPageWorker.swift */; };
 		22C8DDB42442635D00EDCCA0 /* RegisterPageRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C8DDAE2442635D00EDCCA0 /* RegisterPageRouter.swift */; };
 		22C8DDB52442635D00EDCCA0 /* RegisterPageModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C8DDAF2442635D00EDCCA0 /* RegisterPageModels.swift */; };
 		22C8DDB62442635D00EDCCA0 /* RegisterPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C8DDB02442635D00EDCCA0 /* RegisterPageViewController.swift */; };
 		22C8DDB72442635D00EDCCA0 /* RegisterPageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C8DDB12442635D00EDCCA0 /* RegisterPageInteractor.swift */; };
+		22C8DDBA2443660D00EDCCA0 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C8DDB92443660D00EDCCA0 /* Validation.swift */; };
+		22C8DDBC2443F78400EDCCA0 /* TextFieldSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C8DDBB2443F78400EDCCA0 /* TextFieldSettings.swift */; };
+		22C8DDBF2445EA7500EDCCA0 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C8DDBE2445EA7500EDCCA0 /* Result.swift */; };
+		22C8DDC624461A6700EDCCA0 /* ForgotPasswordPagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C8DDC024461A6700EDCCA0 /* ForgotPasswordPagePresenter.swift */; };
+		22C8DDC724461A6700EDCCA0 /* ForgotPasswordPageWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C8DDC124461A6700EDCCA0 /* ForgotPasswordPageWorker.swift */; };
+		22C8DDC824461A6700EDCCA0 /* ForgotPasswordPageRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C8DDC224461A6700EDCCA0 /* ForgotPasswordPageRouter.swift */; };
+		22C8DDC924461A6700EDCCA0 /* ForgotPasswordPageModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C8DDC324461A6700EDCCA0 /* ForgotPasswordPageModels.swift */; };
+		22C8DDCA24461A6700EDCCA0 /* ForgotPasswordPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C8DDC424461A6700EDCCA0 /* ForgotPasswordPageViewController.swift */; };
+		22C8DDCB24461A6700EDCCA0 /* ForgotPasswordPageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C8DDC524461A6700EDCCA0 /* ForgotPasswordPageInteractor.swift */; };
 		22F0FC682442524C004CD2B3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 22F0FC672442524C004CD2B3 /* GoogleService-Info.plist */; };
 		22F0FC7424425D56004CD2B3 /* LoginPagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F0FC6E24425D56004CD2B3 /* LoginPagePresenter.swift */; };
 		22F0FC7524425D56004CD2B3 /* LoginPageWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F0FC6F24425D56004CD2B3 /* LoginPageWorker.swift */; };
@@ -57,6 +69,7 @@
 
 /* Begin PBXFileReference section */
 		158FD54CA057025E2FEDC4B7 /* Pods-ChattyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChattyTests.debug.xcconfig"; path = "Target Support Files/Pods-ChattyTests/Pods-ChattyTests.debug.xcconfig"; sourceTree = "<group>"; };
+		222317272449B167007C23EB /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		228BF04324424FB60027D325 /* Chatty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chatty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		228BF04624424FB60027D325 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		228BF04824424FB60027D325 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,12 +83,23 @@
 		228BF06424424FBB0027D325 /* ChattyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChattyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		228BF06824424FBB0027D325 /* ChattyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattyUITests.swift; sourceTree = "<group>"; };
 		228BF06A24424FBB0027D325 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		229AB746244D9A3800EB166B /* NavigationControllerUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllerUtil.swift; sourceTree = "<group>"; };
+		229AB748244DB59300EB166B /* MessagesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesTableViewCell.swift; sourceTree = "<group>"; };
 		22C8DDAC2442635D00EDCCA0 /* RegisterPagePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPagePresenter.swift; sourceTree = "<group>"; };
 		22C8DDAD2442635D00EDCCA0 /* RegisterPageWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPageWorker.swift; sourceTree = "<group>"; };
 		22C8DDAE2442635D00EDCCA0 /* RegisterPageRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPageRouter.swift; sourceTree = "<group>"; };
 		22C8DDAF2442635D00EDCCA0 /* RegisterPageModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPageModels.swift; sourceTree = "<group>"; };
 		22C8DDB02442635D00EDCCA0 /* RegisterPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPageViewController.swift; sourceTree = "<group>"; };
 		22C8DDB12442635D00EDCCA0 /* RegisterPageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPageInteractor.swift; sourceTree = "<group>"; };
+		22C8DDB92443660D00EDCCA0 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
+		22C8DDBB2443F78400EDCCA0 /* TextFieldSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldSettings.swift; sourceTree = "<group>"; };
+		22C8DDBE2445EA7500EDCCA0 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		22C8DDC024461A6700EDCCA0 /* ForgotPasswordPagePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordPagePresenter.swift; sourceTree = "<group>"; };
+		22C8DDC124461A6700EDCCA0 /* ForgotPasswordPageWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordPageWorker.swift; sourceTree = "<group>"; };
+		22C8DDC224461A6700EDCCA0 /* ForgotPasswordPageRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordPageRouter.swift; sourceTree = "<group>"; };
+		22C8DDC324461A6700EDCCA0 /* ForgotPasswordPageModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordPageModels.swift; sourceTree = "<group>"; };
+		22C8DDC424461A6700EDCCA0 /* ForgotPasswordPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordPageViewController.swift; sourceTree = "<group>"; };
+		22C8DDC524461A6700EDCCA0 /* ForgotPasswordPageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordPageInteractor.swift; sourceTree = "<group>"; };
 		22F0FC672442524C004CD2B3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		22F0FC6E24425D56004CD2B3 /* LoginPagePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPagePresenter.swift; sourceTree = "<group>"; };
 		22F0FC6F24425D56004CD2B3 /* LoginPageWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageWorker.swift; sourceTree = "<group>"; };
@@ -152,6 +176,7 @@
 		228BF04524424FB60027D325 /* Chatty */ = {
 			isa = PBXGroup;
 			children = (
+				22C8DDB8244365F100EDCCA0 /* Common */,
 				22F0FC6924425D08004CD2B3 /* Models */,
 				22F0FC6A24425D0F004CD2B3 /* Services */,
 				22F0FC6B24425D17004CD2B3 /* Scenes */,
@@ -197,6 +222,31 @@
 			path = RegisterPage;
 			sourceTree = "<group>";
 		};
+		22C8DDB8244365F100EDCCA0 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				22C8DDB92443660D00EDCCA0 /* Validation.swift */,
+				22C8DDBB2443F78400EDCCA0 /* TextFieldSettings.swift */,
+				22C8DDBE2445EA7500EDCCA0 /* Result.swift */,
+				222317272449B167007C23EB /* AlertManager.swift */,
+				229AB746244D9A3800EB166B /* NavigationControllerUtil.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		22C8DDBD2445D58B00EDCCA0 /* ForgotPasswordPage */ = {
+			isa = PBXGroup;
+			children = (
+				22C8DDC024461A6700EDCCA0 /* ForgotPasswordPagePresenter.swift */,
+				22C8DDC124461A6700EDCCA0 /* ForgotPasswordPageWorker.swift */,
+				22C8DDC224461A6700EDCCA0 /* ForgotPasswordPageRouter.swift */,
+				22C8DDC324461A6700EDCCA0 /* ForgotPasswordPageModels.swift */,
+				22C8DDC424461A6700EDCCA0 /* ForgotPasswordPageViewController.swift */,
+				22C8DDC524461A6700EDCCA0 /* ForgotPasswordPageInteractor.swift */,
+			);
+			path = ForgotPasswordPage;
+			sourceTree = "<group>";
+		};
 		22F0FC6924425D08004CD2B3 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -214,6 +264,7 @@
 		22F0FC6B24425D17004CD2B3 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				22C8DDBD2445D58B00EDCCA0 /* ForgotPasswordPage */,
 				22F0FC6C24425D27004CD2B3 /* LoginPage */,
 				22C8DDAA2442633A00EDCCA0 /* RegisterPage */,
 				22F0FC6D24425D35004CD2B3 /* ChattingPage */,
@@ -243,6 +294,7 @@
 				22F0FC7D24425D63004CD2B3 /* ChattingPageModels.swift */,
 				22F0FC7E24425D63004CD2B3 /* ChattingPageViewController.swift */,
 				22F0FC7F24425D63004CD2B3 /* ChattingPageInteractor.swift */,
+				229AB748244DB59300EB166B /* MessagesTableViewCell.swift */,
 			);
 			path = ChattingPage;
 			sourceTree = "<group>";
@@ -512,18 +564,30 @@
 			files = (
 				22F0FC8024425D63004CD2B3 /* ChattingPagePresenter.swift in Sources */,
 				22F0FC8424425D63004CD2B3 /* ChattingPageViewController.swift in Sources */,
+				222317282449B167007C23EB /* AlertManager.swift in Sources */,
 				22F0FC7524425D56004CD2B3 /* LoginPageWorker.swift in Sources */,
 				22F0FC7724425D56004CD2B3 /* LoginPageModels.swift in Sources */,
 				22C8DDB72442635D00EDCCA0 /* RegisterPageInteractor.swift in Sources */,
 				22F0FC7424425D56004CD2B3 /* LoginPagePresenter.swift in Sources */,
 				22C8DDB62442635D00EDCCA0 /* RegisterPageViewController.swift in Sources */,
+				22C8DDC624461A6700EDCCA0 /* ForgotPasswordPagePresenter.swift in Sources */,
+				22C8DDCB24461A6700EDCCA0 /* ForgotPasswordPageInteractor.swift in Sources */,
 				22C8DDB52442635D00EDCCA0 /* RegisterPageModels.swift in Sources */,
 				228BF04724424FB60027D325 /* AppDelegate.swift in Sources */,
 				22F0FC8324425D63004CD2B3 /* ChattingPageModels.swift in Sources */,
+				22C8DDC824461A6700EDCCA0 /* ForgotPasswordPageRouter.swift in Sources */,
+				22C8DDBF2445EA7500EDCCA0 /* Result.swift in Sources */,
+				22C8DDBC2443F78400EDCCA0 /* TextFieldSettings.swift in Sources */,
+				229AB747244D9A3800EB166B /* NavigationControllerUtil.swift in Sources */,
+				229AB749244DB59300EB166B /* MessagesTableViewCell.swift in Sources */,
 				22F0FC7824425D56004CD2B3 /* LoginPageViewController.swift in Sources */,
 				22C8DDB42442635D00EDCCA0 /* RegisterPageRouter.swift in Sources */,
 				22F0FC8224425D63004CD2B3 /* ChattingPageRouter.swift in Sources */,
+				22C8DDCA24461A6700EDCCA0 /* ForgotPasswordPageViewController.swift in Sources */,
+				22C8DDC924461A6700EDCCA0 /* ForgotPasswordPageModels.swift in Sources */,
+				22C8DDBA2443660D00EDCCA0 /* Validation.swift in Sources */,
 				22F0FC8124425D63004CD2B3 /* ChattingPageWorker.swift in Sources */,
+				22C8DDC724461A6700EDCCA0 /* ForgotPasswordPageWorker.swift in Sources */,
 				22F0FC7924425D56004CD2B3 /* LoginPageInteractor.swift in Sources */,
 				228BF04924424FB60027D325 /* SceneDelegate.swift in Sources */,
 				22F0FC7624425D56004CD2B3 /* LoginPageRouter.swift in Sources */,

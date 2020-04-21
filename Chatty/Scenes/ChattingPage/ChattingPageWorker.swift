@@ -11,10 +11,27 @@
 //
 
 import UIKit
+import Firebase
 
 class ChattingPageWorker
 {
-  func doSomeWork()
-  {
-  }
+    func signOut()
+    {
+        do {
+            try Auth.auth().signOut()
+        } catch (let error) {
+            print(error.localizedDescription)
+        }
+    }
+    
+    func getMessages() {
+        
+        let messageDB = Database.database().reference().child("Messages")
+        messageDB.observe(.childAdded) { (snapshot) in
+            let snapshotValue = snapshot.value as! Dictionary<String, String>
+            guard let message = snapshotValue["message"], let sender = snapshotValue["sender"] else {return}
+            let isIncoming = (sender == Auth.auth().currentUser?.email ? false : true)
+            let chatMessage = ChattingPage.Response.init(message: message, sender: sender, isIncoming: isIncoming)
+        }
+    }
 }

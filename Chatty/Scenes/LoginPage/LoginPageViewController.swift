@@ -14,7 +14,7 @@ import UIKit
 
 protocol LoginPageDisplayLogic: class
 {
-    func displaySomething(viewModel: LoginPage.Something.ViewModel)
+    func displaySomething(viewModel: LoginPage.ViewModel)
 }
 
 class LoginPageViewController: UIViewController, LoginPageDisplayLogic
@@ -69,21 +69,29 @@ class LoginPageViewController: UIViewController, LoginPageDisplayLogic
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        doSomething()
     }
     
     // MARK: Do something
     
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-    
-    func doSomething()
-    {
-        let request = LoginPage.Something.Request()
-        interactor?.doSomething(request: request)
+
+    @IBAction func forgotPasswordButtonTapped(_ sender: Any) {
+    }
+    @IBAction func loginButtonTapped(_ sender: Any) {
+        let email = emailTextField.text!
+        let password = passwordTextField.text!
+        // MARK: Misc
+        if(Validation.isValidEmail(email: email) && Validation.isValidPassword(password: password)) {
+            let request = LoginPage.Request(email: email, password: password)
+            interactor?.loginInfo(request: request)
+        } else {
+            AlertManager.showConfirmAlert(title: "Warning!", message: "Please enter a valid credentials.", buttonTitle: "OK", controller: self)
+        }
     }
     
-    func displaySomething(viewModel: LoginPage.Something.ViewModel)
+    
+    func displaySomething(viewModel: LoginPage.ViewModel)
     {
         //nameTextField.text = viewModel.name
     }

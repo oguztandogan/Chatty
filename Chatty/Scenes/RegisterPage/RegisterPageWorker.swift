@@ -10,20 +10,78 @@
 //  see http://clean-swift.com
 //
 
-import UIKit
 import Firebase
+import FirebaseAuth
 
 class RegisterPageWorker
 {
-    var registerRequestModel = RegisterPage.Request()
+    typealias ErrorHandler = (Result<AuthDataResult, Error>) -> Void
     
-    func fetchRegisterInfo() {
-        
-        Auth.auth().createUser(withEmail: registerRequestModel.email ?? "", password: registerRequestModel.password ?? "") { (user, error) in
-            if(error != nil){
-                print(error)
-                return
+//    func fetchRegisterInfo(registerPageRequestModel: RegisterPage.Request, completion: @escaping ErrorHandler) {
+//        Auth.auth().createUser(withEmail: registerPageRequestModel.email ?? "", password: registerPageRequestModel.password ?? "") { (data, error) in
+//
+//            if let error = error {
+//                completion(.failure(error))
+//            } else {
+//                guard let data = data else {//TODO burada da bir error dönmeli
+//                    return }
+//                completion(.success(data))
+//            }
+//
+//        }
+//    }
+    
+//    func fetchRegisterInfo(registerPageRequestModel: RegisterPage.Request, completionHandler: @escaping (AuthDataResult?) -> Void) {
+//        Auth.auth().createUser(withEmail: registerPageRequestModel.email ?? "", password: registerPageRequestModel.password ?? "") { (data, error) in
+//            if let _error = error {
+//                //something bad happning
+//                print(_error.localizedDescription )
+//            }else{
+//                //user registered successfully
+//                 completionHandler(data)
+//            }
+//        }
+//    }
+    func fetchRegisterInfo(requestModel: RegisterPage.Request,completion: @escaping (AuthDataResult?) -> Void) {
+        Auth.auth().createUser(withEmail: requestModel.email ?? "", password: requestModel.password ?? "") { (data, error) in
+            if let _error = error {
+                //something bad happning
+                print(_error.localizedDescription )
+            } else {
+                // Adding profile data
+                if let currentUser = Auth.auth().currentUser?.createProfileChangeRequest() {
+                    currentUser.displayName = requestModel.name
+                    currentUser.commitChanges { (error) in
+                        if let error = error {
+                            print(error.localizedDescription)
+                        } else {
+                            completion(data)
+                            print("success")
+                        }
+                    }
+                }
+                self.sendEmailVerification(requestModel: requestModel)
             }
         }
     }
+    
+    func sendEmailVerification(requestModel: RegisterPage.Request) {
+        
+        // Check if email address is already existing
+        Auth.auth().fetchSignInMethods(forEmail: requestModel.email ?? "") { (signInMethods, error) in
+            if let _error = error {
+                print(_error.localizedDescription)
+            } else {
+                    let user = Auth.auth().currentUser
+                    user?.sendEmailVerification(completion: { (error) in
+                        guard error != nil else {
+                            return print("User verification email sent")
+                        }
+                    })
+            }
+        }
+            
+        
+    }
 }
+

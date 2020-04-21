@@ -10,7 +10,8 @@
 //  see http://clean-swift.com
 //
 
-import UIKit
+import Firebase
+import FirebaseAuth
 
 enum RegisterPage
 {
@@ -20,12 +21,18 @@ enum RegisterPage
     {
         var email: String?
         var password: String?
+        var name: String?
     }
     struct Response
     {
+        var isEmailVerified: Bool?
+        var userID: String?
+        var email: String?
     }
     struct ViewModel
     {
+        var isEmailVerified: Bool?
+        var userID: String?
+        var email: String?
     }
-    
 }

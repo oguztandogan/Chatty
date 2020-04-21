@@ -14,28 +14,34 @@ import UIKit
 
 protocol ChattingPageBusinessLogic
 {
-  func doSomething(request: ChattingPage.Something.Request)
+    func messageInfo(request: ChattingPage.Request)
 }
 
 protocol ChattingPageDataStore
 {
-  //var name: String { get set }
+    var displayName: String? { get set }
+    var email: String? { get set }
+    var userID: String? { get set }
 }
 
 class ChattingPageInteractor: ChattingPageBusinessLogic, ChattingPageDataStore
 {
-  var presenter: ChattingPagePresentationLogic?
-  var worker: ChattingPageWorker?
-  //var name: String = ""
-  
-  // MARK: Do something
-  
-  func doSomething(request: ChattingPage.Something.Request)
-  {
-    worker = ChattingPageWorker()
-    worker?.doSomeWork()
+    var userID: String?
+    var displayName: String?
+    var email: String?
     
-    let response = ChattingPage.Something.Response()
-    presenter?.presentSomething(response: response)
-  }
+    var presenter: ChattingPagePresentationLogic?
+    var worker: ChattingPageWorker?
+    //var name: String = ""
+    
+    // MARK: Do something
+    
+    func messageInfo(request: ChattingPage.Request)
+    {
+        worker = ChattingPageWorker()
+        worker?.signOut()
+        
+//        let response = ChattingPage.Response(message: String?, sender: String?, isIncoming: Bool?)
+//        presenter?.presentSomething(response: response)
+    }
 }

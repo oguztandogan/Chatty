@@ -14,28 +14,33 @@ import UIKit
 
 protocol RegisterPageBusinessLogic
 {
-  func userInfo(request: RegisterPage.Request)
+    func userInfo(request: RegisterPage.Request)
 }
 
 protocol RegisterPageDataStore
 {
-  //var name: String { get set }
+    //var name: String { get set }
 }
 
 class RegisterPageInteractor: RegisterPageBusinessLogic, RegisterPageDataStore
 {
-  var presenter: RegisterPagePresentationLogic?
-  var worker: RegisterPageWorker?
-  //var name: String = ""
-  
-  // MARK: Do something
-  
-  func userInfo(request: RegisterPage.Request)
-  {
-    worker = RegisterPageWorker()
-    worker?.fetchRegisterInfo()
+    var presenter: RegisterPagePresentationLogic?
+    var worker: RegisterPageWorker?
+    //var name: String = ""
     
-    let response = RegisterPage.Response()
-    presenter?.presentSomething(response: response)
-  }
+    // MARK: Do something
+    
+    func userInfo(request: RegisterPage.Request)
+    {
+        var response = RegisterPage.Response()
+        worker = RegisterPageWorker()
+        worker?.fetchRegisterInfo(requestModel: request, completion: { (authResponse) in
+            // Filling the response model
+            response.email = authResponse?.user.email
+            response.isEmailVerified = authResponse?.user.isEmailVerified
+            response.userID = authResponse?.user.uid
+        })
+//        worker?.sendEmailVerification(requestModel: )
+        presenter?.presentSomething(response: response)
+    }
 }

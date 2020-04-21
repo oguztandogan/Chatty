@@ -14,7 +14,7 @@ import UIKit
 
 @objc protocol ChattingPageRoutingLogic
 {
-  //func routeToSomewhere(segue: UIStoryboardSegue?)
+  func routeToSomewhere(segue: UIStoryboardSegue?)
 }
 
 protocol ChattingPageDataPassing
@@ -29,32 +29,31 @@ class ChattingPageRouter: NSObject, ChattingPageRoutingLogic, ChattingPageDataPa
   
   // MARK: Routing
   
-  //func routeToSomewhere(segue: UIStoryboardSegue?)
-  //{
-  //  if let segue = segue {
-  //    let destinationVC = segue.destination as! SomewhereViewController
-  //    var destinationDS = destinationVC.router!.dataStore!
-  //    passDataToSomewhere(source: dataStore!, destination: &destinationDS)
-  //  } else {
-  //    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-  //    let destinationVC = storyboard.instantiateViewController(withIdentifier: "SomewhereViewController") as! SomewhereViewController
-  //    var destinationDS = destinationVC.router!.dataStore!
-  //    passDataToSomewhere(source: dataStore!, destination: &destinationDS)
-  //    navigateToSomewhere(source: viewController!, destination: destinationVC)
-  //  }
-  //}
+  func routeToSomewhere(segue: UIStoryboardSegue?)
+  {
+    if let segue = segue {
+      let destinationVC = segue.destination as! LoginPageViewController
+      var destinationDS = destinationVC.router!.dataStore!
+      passDataToSomewhere(source: dataStore!, destination: &destinationDS)
+    } else {
+      let storyboard = UIStoryboard(name: "Main", bundle: nil)
+      let destinationVC = storyboard.instantiateViewController(withIdentifier: "LoginPageViewController") as! LoginPageViewController
+      var destinationDS = destinationVC.router!.dataStore!
+      passDataToSomewhere(source: dataStore!, destination: &destinationDS)
+      navigateToLoginPage(source: viewController!, destination: destinationVC)
+    }
+  }
 
   // MARK: Navigation
   
-  //func navigateToSomewhere(source: ChattingPageViewController, destination: SomewhereViewController)
-  //{
-  //  source.show(destination, sender: nil)
-  //}
+  func navigateToLoginPage(source: ChattingPageViewController, destination: LoginPageViewController)
+  {
+    source.navigationController?.popViewController(animated: true)
+  }
   
   // MARK: Passing data
   
-  //func passDataToSomewhere(source: ChattingPageDataStore, destination: inout SomewhereDataStore)
-  //{
-  //  destination.name = source.name
-  //}
+  func passDataToSomewhere(source: ChattingPageDataStore, destination: inout LoginPageDataStore)
+  {
+  }
 }

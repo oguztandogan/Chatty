@@ -12,11 +12,7 @@
 
 import UIKit
 
-enum LoginPage
-{
-  // MARK: Use cases
-  
-  enum Something
+  enum LoginPage
   {
     struct Request
     {
@@ -25,9 +21,14 @@ enum LoginPage
     }
     struct Response
     {
+        var displayName: String?
+        var email: String?
+        var userID: String?
     }
     struct ViewModel
     {
+        var displayName: String?
+        var email: String?
+        var userID: String?
     }
   }
-}
