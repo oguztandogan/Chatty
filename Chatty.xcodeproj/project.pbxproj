@@ -17,6 +17,7 @@
 		228BF06924424FBB0027D325 /* ChattyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228BF06824424FBB0027D325 /* ChattyUITests.swift */; };
 		229AB747244D9A3800EB166B /* NavigationControllerUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229AB746244D9A3800EB166B /* NavigationControllerUtil.swift */; };
 		229AB749244DB59300EB166B /* MessagesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229AB748244DB59300EB166B /* MessagesTableViewCell.swift */; };
+		229AB74B244F174900EB166B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 229AB74A244F174900EB166B /* GoogleService-Info.plist */; };
 		22C8DDB22442635D00EDCCA0 /* RegisterPagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C8DDAC2442635D00EDCCA0 /* RegisterPagePresenter.swift */; };
 		22C8DDB32442635D00EDCCA0 /* RegisterPageWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C8DDAD2442635D00EDCCA0 /* RegisterPageWorker.swift */; };
 		22C8DDB42442635D00EDCCA0 /* RegisterPageRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C8DDAE2442635D00EDCCA0 /* RegisterPageRouter.swift */; };
@@ -32,7 +33,6 @@
 		22C8DDC924461A6700EDCCA0 /* ForgotPasswordPageModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C8DDC324461A6700EDCCA0 /* ForgotPasswordPageModels.swift */; };
 		22C8DDCA24461A6700EDCCA0 /* ForgotPasswordPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C8DDC424461A6700EDCCA0 /* ForgotPasswordPageViewController.swift */; };
 		22C8DDCB24461A6700EDCCA0 /* ForgotPasswordPageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C8DDC524461A6700EDCCA0 /* ForgotPasswordPageInteractor.swift */; };
-		22F0FC682442524C004CD2B3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 22F0FC672442524C004CD2B3 /* GoogleService-Info.plist */; };
 		22F0FC7424425D56004CD2B3 /* LoginPagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F0FC6E24425D56004CD2B3 /* LoginPagePresenter.swift */; };
 		22F0FC7524425D56004CD2B3 /* LoginPageWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F0FC6F24425D56004CD2B3 /* LoginPageWorker.swift */; };
 		22F0FC7624425D56004CD2B3 /* LoginPageRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F0FC7024425D56004CD2B3 /* LoginPageRouter.swift */; };
@@ -85,6 +85,7 @@
 		228BF06A24424FBB0027D325 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		229AB746244D9A3800EB166B /* NavigationControllerUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllerUtil.swift; sourceTree = "<group>"; };
 		229AB748244DB59300EB166B /* MessagesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesTableViewCell.swift; sourceTree = "<group>"; };
+		229AB74A244F174900EB166B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		22C8DDAC2442635D00EDCCA0 /* RegisterPagePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPagePresenter.swift; sourceTree = "<group>"; };
 		22C8DDAD2442635D00EDCCA0 /* RegisterPageWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPageWorker.swift; sourceTree = "<group>"; };
 		22C8DDAE2442635D00EDCCA0 /* RegisterPageRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPageRouter.swift; sourceTree = "<group>"; };
@@ -100,7 +101,6 @@
 		22C8DDC324461A6700EDCCA0 /* ForgotPasswordPageModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordPageModels.swift; sourceTree = "<group>"; };
 		22C8DDC424461A6700EDCCA0 /* ForgotPasswordPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordPageViewController.swift; sourceTree = "<group>"; };
 		22C8DDC524461A6700EDCCA0 /* ForgotPasswordPageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordPageInteractor.swift; sourceTree = "<group>"; };
-		22F0FC672442524C004CD2B3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		22F0FC6E24425D56004CD2B3 /* LoginPagePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPagePresenter.swift; sourceTree = "<group>"; };
 		22F0FC6F24425D56004CD2B3 /* LoginPageWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageWorker.swift; sourceTree = "<group>"; };
 		22F0FC7024425D56004CD2B3 /* LoginPageRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageRouter.swift; sourceTree = "<group>"; };
@@ -186,7 +186,7 @@
 				228BF04F24424FBB0027D325 /* Assets.xcassets */,
 				228BF05124424FBB0027D325 /* LaunchScreen.storyboard */,
 				228BF05424424FBB0027D325 /* Info.plist */,
-				22F0FC672442524C004CD2B3 /* GoogleService-Info.plist */,
+				229AB74A244F174900EB166B /* GoogleService-Info.plist */,
 			);
 			path = Chatty;
 			sourceTree = "<group>";
@@ -432,7 +432,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				228BF05324424FBB0027D325 /* LaunchScreen.storyboard in Resources */,
-				22F0FC682442524C004CD2B3 /* GoogleService-Info.plist in Resources */,
+				229AB74B244F174900EB166B /* GoogleService-Info.plist in Resources */,
 				228BF05024424FBB0027D325 /* Assets.xcassets in Resources */,
 				228BF04E24424FB60027D325 /* Main.storyboard in Resources */,
 			);
